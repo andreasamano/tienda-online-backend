@@ -12,9 +12,8 @@ def get_connection():
             user=os.getenv('DB_USER', 'movauser'),
             password=os.getenv('DB_PASSWORD', '12345'),
             database=os.getenv('DB_NAME', 'tienda_online'),
-            use_pure=True,
-            ssl_disabled=True
-        )
+                 ssl_disabled=not usar_ssl
+    )
         return conexion
 
     except mysql.connector.Error as error:
